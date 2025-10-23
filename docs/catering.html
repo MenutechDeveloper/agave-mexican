@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | El Agave Mexican Restaurant</title>
+    
+    <meta name="description" content="Explora el delicioso y auténtico menú de El Agave Mexican Restaurant. Aperitivos, especialidades, platillos mexicanos, ¡y más!">
+    <meta name="keywords" content="restaurante mexicano, comida mexicana, menú, tacos, fajitas, el agave">
+    <meta name="author" content="El Agave Mexican Restaurant">
+    
+    <meta property="og:title" content="Menú | El Agave Mexican Restaurant">
+    <meta property="og:description" content="Descubre todos nuestros platillos auténticos.">
+
+    <link rel="icon" href="assets/img/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/img/logo.png"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #c8102e;
+            --secondary: #006341;
+            --accent: #f9a825;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background-color: #a00d25;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: #004d32;
+        }
+
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            margin: 15px auto 0;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 5px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 60px;  
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .logo span {
+            color: var(--secondary);
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-left: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: relative;
+            margin-left: 15px;
+        }
+
+        .language-btn {
+            background: none;
+            border: none;
+            color: var(--dark);
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .language-btn:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            min-width: 120px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 1002;
+        }
+
+        .language-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-option {
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .language-option:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Hero Section */
+        .catering-hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                        url('./assets/img/food5.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .catering-hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(200, 16, 46, 0.2), rgba(0, 99, 65, 0.2));
+            z-index: 0;
+        }
+
+        .catering-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .catering-hero-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .catering-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+        }
+
+        .catering-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Floating elements */
+        .floating-element {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            bottom: 15%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+
+        /* Catering Features */
+        .catering-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .catering-feature {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .catering-feature.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .catering-feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .catering-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .catering-feature:hover .catering-icon {
+            background-color: var(--secondary);
+            transform: rotate(10deg);
+        }
+
+        /* Catering Options */
+        .catering-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+
+        .catering-option {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .catering-option.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .catering-option:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .option-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .option-content {
+            padding: 30px;
+        }
+
+        .option-list {
+            margin-bottom: 20px;
+        }
+
+        .option-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .option-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Quote Form */
+        .quote-form-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .quote-form-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(200, 16, 46, 0.2);
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* FAQs */
+        .faqs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+        }
+
+        .faq-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .contact-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .contact-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover .contact-icon {
+            background-color: var(--secondary);
+            transform: rotate(10deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(200, 16, 46, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-heading {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-heading:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        /* Loading animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(200, 16, 46, 0.2);
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .catering-hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 100px 30px 30px;
+                transition: var(--transition);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-btns {
+                flex-direction: column;
+                width: 100%;
+                padding: 0;
+                margin-top: 30px;
+            }
+
+            .catering-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .floating-element {
+                display: none;
+            }
+
+            .language-selector {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            .quote-form-container {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .catering-hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .catering-features, .catering-options, .faqs-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="./assets/img/logo.png" alt="El Agave Logo" class="nav-logo">
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+                    <li><a href="menu.html" data-en="Menu" data-es="Menú">Menu</a></li>
+                    <li><a href="catering.html" data-en="Catering" data-es="Catering">Catering</a></li>
+                    <li>
+                        <a href="https://www.onlineorderbuddy.com/ordering/restaurant/menu?restaurant_uid=a9905f55-3fa0-42f4-a88e-6abba7519881&glfa_cid=1826676475.1608062202&glfa_t=1608062204382"
+                        target="_blank" data-en="Order Online" data-es="Ordenar En Línea">
+                            Order Online
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav-btns">
+                    <div class="language-selector">
+                        <button class="language-btn">
+                            <i class="fas fa-globe"></i>
+                            <span id="current-lang">EN</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="language-dropdown">
+                            <div class="language-option" data-lang="en">English</div>
+                            <div class="language-option" data-lang="es">Español</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="catering-hero">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+
+        <div class="container">
+            <div class="catering-hero-content">
+                <h1 data-en="El Agave Catering" data-es="Catering El Agave">El Agave Catering</h1>
+                <p data-en="Fresh, festive, and right on time — perfect for office lunches, celebrations, and events of any size."
+                   data-es="Fresco, festivo y justo a tiempo — perfecto para almuerzos de oficina, celebraciones y eventos de cualquier tamaño.">
+                    Fresh, festive, and right on time — perfect for office lunches, celebrations, and events of any size.
+                </p>
+                <div class="hero-btns">
+                    <a href="#quote" class="btn" data-en="Get a Quote" data-es="Obtener Cotización">Get a Quote</a>
+                    <a href="#faqs" class="btn btn-secondary" data-en="FAQs" data-es="Preguntas Frecuentes">FAQs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering Features Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title" data-en="Why Choose El Agave Catering?" data-es="¿Por Qué Elegir Catering El Agave?">Why Choose El Agave Catering?</h2>
+            
+            <div class="catering-features">
+                <div class="catering-feature">
+                    <div class="catering-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 data-en="Made Fresh" data-es="Hecho Fresco">Made Fresh</h3>
+                    <p data-en="All dishes are prepared in‑house with quality ingredients and bold, authentic flavors."
+                       data-es="Todos los platos se preparan en casa con ingredientes de calidad y sabores audaces y auténticos.">
+                        All dishes are prepared in‑house with quality ingredients and bold, authentic flavors.
+                    </p>
+                </div>
+                
+                <div class="catering-feature">
+                    <div class="catering-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 data-en="On‑Time Delivery" data-es="Entrega Puntual">On‑Time Delivery</h3>
+                    <p data-en="Reliable drop‑off with labeled pans, serving utensils, and easy setup."
+                       data-es="Entrega confiable con bandejas etiquetadas, utensilios de servicio y configuración fácil.">
+                        Reliable drop‑off with labeled pans, serving utensils, and easy setup.
+                    </p>
+                </div>
+                
+                <div class="catering-feature">
+                    <div class="catering-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 data-en="Any Group Size" data-es="Cualquier Tamaño de Grupo">Any Group Size</h3>
+                    <p data-en="From 10 to 300 — we scale portions and packaging for your event."
+                       data-es="Desde 10 hasta 300 — escalamos porciones y empaques para tu evento.">
+                        From 10 to 300 — we scale portions and packaging for your event.
+                    </p>
+                </div>
+                
+                <div class="catering-feature">
+                    <div class="catering-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 data-en="Simple Pricing" data-es="Precios Sencillos">Simple Pricing</h3>
+                    <p data-en="Clear per‑person pricing and add‑ons. No surprises."
+                       data-es="Precios claros por persona y complementos. Sin sorpresas.">
+                        Clear per‑person pricing and add‑ons. No surprises.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering Options Section -->
+    <section class="section" style="background-color: var(--light);">
+        <div class="container">
+            <h2 class="section-title" data-en="Popular Catering Options" data-es="Opciones Populares de Catering">Popular Catering Options</h2>
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;" 
+               data-en="Don't have a final menu yet? Start with a style and we'll tailor the details in your quote."
+               data-es="¿Aún no tienes un menú final? Comienza con un estilo y adaptaremos los detalles en tu cotización.">
+                Don't have a final menu yet? Start with a style and we'll tailor the details in your quote.
+            </p>
+            
+            <div class="catering-options">
+                <div class="catering-option">
+                    <div class="option-header">
+                        <h3 data-en="Taco Bar" data-es="Barra de Tacos">Taco Bar</h3>
+                    </div>
+                    <div class="option-content">
+                        <ul class="option-list">
+                            <li data-en="Choice of 2 proteins" data-es="Elección de 2 proteínas">Choice of 2 proteins</li>
+                            <li data-en="Warm tortillas & toppings" data-es="Tortillas calientes y toppings">Warm tortillas & toppings</li>
+                            <li data-en="Rice & beans" data-es="Arroz y frijoles">Rice & beans</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="catering-option">
+                    <div class="option-header">
+                        <h3 data-en="Fajita Spread" data-es="Extensión de Fajitas">Fajita Spread</h3>
+                    </div>
+                    <div class="option-content">
+                        <ul class="option-list">
+                            <li data-en="Grilled steak/chicken/veg" data-es="Bistec/pollo/verduras a la parrilla">Grilled steak/chicken/veg</li>
+                            <li data-en="Peppers & onions" data-es="Pimientos y cebollas">Peppers & onions</li>
+                            <li data-en="Guacamole, salsa, chips" data-es="Guacamole, salsa, totopos">Guacamole, salsa, chips</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="catering-option">
+                    <div class="option-header">
+                        <h3 data-en="Street Party" data-es="Fiesta Callejera">Street Party</h3>
+                    </div>
+                    <div class="option-content">
+                        <ul class="option-list">
+                            <li data-en="Street tacos & elote" data-es="Tacos callejeros y elote">Street tacos & elote</li>
+                            <li data-en="Quesadillas or nacho bar" data-es="Quesadillas o barra de nachos">Quesadillas or nacho bar</li>
+                            <li data-en="House salsas" data-es="Salsas de la casa">House salsas</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="catering-option">
+                    <div class="option-header">
+                        <h3 data-en="Custom Order" data-es="Pedido Personalizado">Custom Order</h3>
+                    </div>
+                    <div class="option-content">
+                        <ul class="option-list">
+                            <li data-en="Tell us your vision" data-es="Cuéntanos tu visión">Tell us your vision</li>
+                            <li data-en="Dietary preferences" data-es="Preferencias dietéticas">Dietary preferences</li>
+                            <li data-en="We'll build your menu" data-es="Crearemos tu menú">We'll build your menu</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section id="quote" class="section">
+        <div class="container">
+            <h2 class="section-title" data-en="Request a Catering Quote" data-es="Solicitar Cotización de Catering">Request a Catering Quote</h2>
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;" 
+               data-en="Fill out the form and we'll confirm availability and pricing ASAP."
+               data-es="Completa el formulario y confirmaremos disponibilidad y precios lo antes posible.">
+                Fill out the form and we'll confirm availability and pricing ASAP.
+            </p>
+            
+            <div class="quote-form-container">
+                <form id="cateringForm">
+                    <div class="form-group">
+                        <label for="name" data-en="Name" data-es="Nombre">Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" data-en="Email" data-es="Correo Electrónico">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" data-en="Phone" data-es="Teléfono">Phone</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-date" data-en="Event Date" data-es="Fecha del Evento">Event Date</label>
+                        <input type="date" id="event-date" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guests" data-en="Number of Guests" data-es="Número de Invitados">Number of Guests</label>
+                        <input type="number" id="guests" class="form-control" min="10" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-type" data-en="Event Type" data-es="Tipo de Evento">Event Type</label>
+                        <select id="event-type" class="form-control" required>
+                            <option value="" data-en="Select an option" data-es="Selecciona una opción">Select an option</option>
+                            <option value="office" data-en="Office Lunch" data-es="Almuerzo de Oficina">Office Lunch</option>
+                            <option value="wedding" data-en="Wedding" data-es="Boda">Wedding</option>
+                            <option value="birthday" data-en="Birthday Party" data-es="Fiesta de Cumpleaños">Birthday Party</option>
+                            <option value="corporate" data-en="Corporate Event" data-es="Evento Corporativo">Corporate Event</option>
+                            <option value="other" data-en="Other" data-es="Otro">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="menu-preference" data-en="Menu Preference" data-es="Preferencia de Menú">Menu Preference</label>
+                        <select id="menu-preference" class="form-control">
+                            <option value="" data-en="Select an option" data-es="Selecciona una opción">Select an option</option>
+                            <option value="taco-bar" data-en="Taco Bar" data-es="Barra de Tacos">Taco Bar</option>
+                            <option value="fajita-spread" data-en="Fajita Spread" data-es="Extensión de Fajitas">Fajita Spread</option>
+                            <option value="street-party" data-en="Street Party" data-es="Fiesta Callejera">Street Party</option>
+                            <option value="custom" data-en="Custom Order" data-es="Pedido Personalizado">Custom Order</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" data-en="Additional Details" data-es="Detalles Adicionales">Additional Details</label>
+                        <textarea id="message" class="form-control" placeholder="Tell us about your event, dietary restrictions, or any special requests..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" data-en="Submit Request" data-es="Enviar Solicitud">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faqs" class="section" style="background-color: var(--light);">
+        <div class="container">
+            <h2 class="section-title" data-en="Catering FAQs" data-es="Preguntas Frecuentes de Catering">Catering FAQs</h2>
+            
+            <div class="faqs-container">
+                <div class="faq-item">
+                    <h3 class="faq-question" data-en="How much notice do you need?" data-es="¿Cuánto tiempo de anticipación necesitan?">How much notice do you need?</h3>
+                    <p data-en="We can often accommodate within 48–72 hours. Larger events appreciate 5–7 days' notice."
+                       data-es="A menudo podemos acomodar dentro de 48-72 horas. Los eventos más grandes agradecen 5-7 días de anticipación.">
+                        We can often accommodate within 48–72 hours. Larger events appreciate 5–7 days' notice.
+                    </p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question" data-en="Do you offer delivery and setup?" data-es="¿Ofrecen entrega y montaje?">Do you offer delivery and setup?</h3>
+                    <p data-en="Yes — we deliver, label items, and provide serving utensils. Chafers & fuel available upon request."
+                       data-es="Sí — entregamos, etiquetamos artículos y proporcionamos utensilios de servicio. Chafers y combustible disponibles bajo petición.">
+                        Yes — we deliver, label items, and provide serving utensils. Chafers & fuel available upon request.
+                    </p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question" data-en="Can you handle dietary requests?" data-es="¿Pueden manejar solicitudes dietéticas?">Can you handle dietary requests?</h3>
+                    <p data-en="Absolutely. Let us know about vegetarian, vegan, or gluten‑friendly needs in the form."
+                       data-es="Absolutamente. Háganos saber sobre necesidades vegetarianas, veganas o sin gluten en el formulario.">
+                        Absolutely. Let us know about vegetarian, vegan, or gluten‑friendly needs in the form.
+                    </p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question" data-en="What areas do you serve?" data-es="¿Qué áreas atienden?">What areas do you serve?</h3>
+                    <p data-en="We primarily serve McDonough and surrounding areas. Include your venue address in the form for an exact delivery quote."
+                       data-es="Atendemos principalmente McDonough y áreas circundantes. Incluya la dirección de su lugar en el formulario para una cotización de entrega exacta.">
+                        We primarily serve McDonough and surrounding areas. Include your venue address in the form for an exact delivery quote.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title" data-en="Ready to make it delicious and easy?" data-es="¿Listo para hacerlo delicioso y fácil?">Ready to make it delicious and easy?</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3 data-en="Call Us" data-es="Llámanos">Call Us</h3>
+                            <p>(678) 583-2339</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 data-en="Email Us" data-es="Escríbenos">Email Us</h3>
+                            <p>elagavemexrest@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3 data-en="Visit Us" data-es="Visítanos">Visit Us</h3>
+                            <p>1381 Highway 20 W, McDonough, GA 30253</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3 data-en="Hours" data-es="Horario">Hours</h3>
+                            <p data-en="Sun–Thu: 11 AM – 10 PM" data-es="Dom–Jue: 11 AM – 10 PM">Sun–Thu: 11 AM – 10 PM</p>
+                            <p data-en="Fri: 11 AM – 11 PM" data-es="Vie: 11 AM – 11 PM">Fri: 11 AM – 11 PM</p>
+                            <p data-en="Sat: 11 AM – 10:30 PM" data-es="Sáb: 11 AM – 10:30 PM">Sat: 11 AM – 10:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="./assets/img/logo.png" alt="El Agave Logo">
+                    </div>
+                    <p data-en="Authentic Mexican cuisine in a vibrant, festive atmosphere with friendly service that keeps our guests coming back."
+                    data-es="Auténtica cocina mexicana en un ambiente vibrante y festivo con servicio amigable que hace que nuestros invitados regresen.">
+                        Authentic Mexican cuisine in a vibrant, festive atmosphere with friendly service that keeps our guests coming back.
+                    </p>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/elagavemcdonough" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/elagave____/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-heading" data-en="Quick Links" data-es="Enlaces Rápidos">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+                        <li><a href="menu.html" data-en="Menu" data-es="Menú">Menu</a></li>
+                        <li><a href="catering.html" data-en="Catering" data-es="Catering">Catering</a></li>
+                        <li><a href="https://www.onlineorderbuddy.com/ordering/restaurant/menu?restaurant_uid=a9905f55-3fa0-42f4-a88e-6abba7519881&glfa_cid=1826676475.1608062202&glfa_t=1608062204382" target="_blank" data-en="Order Online" data-es="Ordenar En Línea">Order Online</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-heading" data-en="Contact Info" data-es="Información de Contacto">Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 1381 Highway 20 W, McDonough, GA 30253</p>
+                    <p><i class="fas fa-phone-alt"></i> (678) 583-2339</p>
+                    <p><i class="fas fa-envelope"></i> elagavemexrest@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 El Agave Mexican Restaurant. All Rights Reserved. Powered By Menutech</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            const loader = document.querySelector('.loader');
+            setTimeout(function() {
+                loader.classList.add('hidden');
+            }, 1000);
+        });
+
+        // Mobile Navigation Toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-bars');
+            this.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.mobile-toggle i').classList.remove('fa-times');
+                document.querySelector('.mobile-toggle i').classList.add('fa-bars');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Scroll to top button visibility
+            const scrollTopBtn = document.querySelector('.scroll-top');
+            if (scrollTop > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+
+        document.querySelector('.scroll-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        document.getElementById('cateringForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const eventDate = document.getElementById('event-date').value;
+            const guests = document.getElementById('guests').value;
+            const eventType = document.getElementById('event-type').value;
+            const menuPreference = document.getElementById('menu-preference').value;
+            const message = document.getElementById('message').value;
+            
+
+            alert(`Thank you for your catering request, ${name}! We will get back to you within 24 hours with a quote.`);
+            
+
+            this.reset();
+        });
+
+        function checkScroll() {
+            const elements = document.querySelectorAll('.section-title, .catering-feature, .catering-option, .quote-form-container, .faq-item, .contact-item');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 100;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+
+        window.addEventListener('load', checkScroll);
+
+        window.addEventListener('scroll', checkScroll);
+
+        window.addEventListener('load', function() {
+            const heroContent = document.querySelector('.catering-hero-content');
+            setTimeout(function() {
+                heroContent.classList.add('visible');
+            }, 400);
+        });
+
+
+        const languageBtn = document.querySelector('.language-btn');
+        const languageDropdown = document.querySelector('.language-dropdown');
+        const currentLang = document.getElementById('current-lang');
+        const languageOptions = document.querySelectorAll('.language-option');
+        
+        languageBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            languageDropdown.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function() {
+            languageDropdown.classList.remove('active');
+        });
+
+        languageOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                changeLanguage(lang);
+                languageDropdown.classList.remove('active');
+            });
+        });
+        
+        function changeLanguage(lang) {
+
+            currentLang.textContent = lang.toUpperCase();
+            
+            document.querySelectorAll('[data-en]').forEach(element => {
+                if (lang === 'en') {
+                    element.textContent = element.getAttribute('data-en');
+                } else if (lang === 'es') {
+                    element.textContent = element.getAttribute('data-es');
+                }
+            });
+
+            if (lang === 'es') {
+                document.querySelector('title').textContent = 'El Agave Catering | Auténtico Catering Mexicano';
+                document.querySelector('#message').placeholder = "Cuéntanos sobre tu evento, restricciones dietéticas o cualquier solicitud especial...";
+            } else {
+                document.querySelector('title').textContent = 'El Agave Catering | Authentic Mexican Catering';
+                document.querySelector('#message').placeholder = "Tell us about your event, dietary restrictions, or any special requests...";
+            }
+            
+            localStorage.setItem('preferred-language', lang);
+        }
+        
+
+        const savedLanguage = localStorage.getItem('preferred-language');
+        if (savedLanguage) {
+            changeLanguage(savedLanguage);
+        }
+    </script>
+</body>
+</html>

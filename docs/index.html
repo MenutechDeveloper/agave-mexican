@@ -1,0 +1,2150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | El Agave Mexican Restaurant</title>
+    
+    <meta name="description" content="Explora el delicioso y auténtico menú de El Agave Mexican Restaurant. Aperitivos, especialidades, platillos mexicanos, ¡y más!">
+    <meta name="keywords" content="restaurante mexicano, comida mexicana, menú, tacos, fajitas, el agave">
+    <meta name="author" content="El Agave Mexican Restaurant">
+    
+    <meta property="og:title" content="Menú | El Agave Mexican Restaurant">
+    <meta property="og:description" content="Descubre todos nuestros platillos auténticos.">
+
+    <link rel="icon" href="assets/img/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/img/logo.png"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #c8102e;
+            --secondary: #006341;
+            --accent: #f9a825;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background-color: #a00d25;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: #004d32;
+        }
+
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            margin: 15px auto 0;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 5px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    transition: var(--transition);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+
+.logo img {
+    height: 60px;  
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+.logo span {
+    color: var(--secondary);
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-left: 8px;
+}
+
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: relative;
+            margin-left: 15px;
+        }
+
+        .language-btn {
+            background: none;
+            border: none;
+            color: var(--dark);
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .language-btn:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            min-width: 120px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 1002;
+        }
+
+        .language-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-option {
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .language-option:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Hero Section */
+        .hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                url('./assets/img/food5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.hero-logo {
+    display: block;
+    margin: 0 auto 25px auto;
+    max-width: 380px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    transition: transform 0.4s ease;
+}
+
+.hero-logo:hover {
+    transform: scale(1.05);
+}
+
+/* 🔹 Responsivo */
+@media (max-width: 768px) {
+    .hero-logo {
+        max-width: 130px;
+    }
+}
+
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(200, 16, 46, 0.2), rgba(0, 99, 65, 0.2));
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .hero-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* Floating elements */
+        .floating-element {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            bottom: 15%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(200, 16, 46, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .about-text.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .about-image.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-image img {
+            transition: var(--transition);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Favorites Section */
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding-top: 1rem;
+    justify-items: center;
+}
+
+.favorite-card {
+    background-color: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 280px; 
+    display: flex;
+    flex-direction: column;
+}
+
+
+.favorite-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+}
+
+.favorite-img {
+    height: 230px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.favorite-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.35), rgba(0,0,0,0));
+}
+
+.favorite-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.favorite-tag {
+    align-self: flex-start;
+    background-color: var(--primary);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.favorite-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: var(--dark);
+}
+
+.favorite-content p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.favorite-price {
+    font-weight: 700;
+    color: var(--secondary);
+    font-size: 1.1rem;
+    margin: 12px 0 6px;
+}
+
+.favorites-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.favorites-cta .btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+}
+
+
+.favorite-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.favorite-card {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials:before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: -5%;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(249, 168, 37, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+        }
+
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 60px;
+            color: rgba(200, 16, 46, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-meta {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .stars {
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        /* Catering Section */
+        .catering {
+            background-color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .catering:before {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            right: -5%;
+            width: 250px;
+            height: 250px;
+            background-color: rgba(249, 168, 37, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .catering-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .catering-intro.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .catering-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .catering-feature {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .catering-feature.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .catering-feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .catering-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .catering-feature:hover .catering-icon {
+            background-color: var(--secondary);
+            transform: rotate(10deg);
+        }
+
+        .catering-packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .catering-package {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .catering-package.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .catering-package:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .package-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .package-content {
+            padding: 30px;
+        }
+
+        .package-list {
+            margin-bottom: 20px;
+        }
+
+        .package-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .package-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .catering-cta {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .catering-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery:before {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: -5%;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 99, 65, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-item {
+            height: 250px;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .gallery-item.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover:after {
+            opacity: 1;
+        }
+
+        /* Image Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 10px;
+        }
+
+        .modal-nav:hover {
+            color: var(--accent);
+        }
+
+        .modal-prev {
+            left: 15px;
+        }
+
+        .modal-next {
+            right: 15px;
+        }
+
+        /* Video Section */
+      .video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.video-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact:before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(249, 168, 37, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .contact-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .contact-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover .contact-icon {
+            background-color: var(--secondary);
+            transform: rotate(10deg);
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .contact-form.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(200, 16, 46, 0.2);
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(200, 16, 46, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-heading {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-heading:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        /* Loading animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(200, 16, 46, 0.2);
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 100px 30px 30px;
+                transition: var(--transition);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-btns {
+                flex-direction: column;
+                width: 100%;
+                padding: 0;
+                margin-top: 30px;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .floating-element {
+                display: none;
+            }
+
+            .modal-nav {
+                font-size: 30px;
+            }
+
+            .language-selector {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+            .catering-features, .catering-packages, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .favorites-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 1200px) {
+    .favorites-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .favorites-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .favorites-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+  <div class="container">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="./assets/img/logo.png" alt="El Agave Logo" class="nav-logo">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+        <li><a href="menu.html" data-en="Menu" data-es="Menú">Menu</a></li>
+        <li><a href="catering.html" data-en="Catering" data-es="Catering">Catering</a></li>
+        <li>
+          <a href="https://www.onlineorderbuddy.com/ordering/restaurant/menu?restaurant_uid=a9905f55-3fa0-42f4-a88e-6abba7519881&glfa_cid=1826676475.1608062202&glfa_t=1608062204382"
+             target="_blank" data-en="Order Online" data-es="Ordenar En Línea">
+            Order Online
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-btns">
+        <div class="language-selector">
+          <button class="language-btn">
+            <i class="fas fa-globe"></i>
+            <span id="current-lang">EN</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="language-dropdown">
+            <div class="language-option" data-lang="en">English</div>
+            <div class="language-option" data-lang="es">Español</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+  <div class="floating-element"></div>
+  <div class="floating-element"></div>
+  <div class="floating-element"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <img src="./assets/img/logo.png" alt="El Agave Logo" class="hero-logo">
+      <h1 data-en="Authentic Mexican Cuisine" data-es="Auténtica Cocina Mexicana">
+        Authentic Mexican Cuisine
+      </h1>
+      <p data-en="Experience the vibrant flavors of Mexico in a festive atmosphere with friendly service that keeps our guests coming back for more."
+         data-es="Experimenta los vibrantes sabores de México en un ambiente festivo con servicio amigable que hace que nuestros invitados regresen por más.">
+        Experience the vibrant flavors of Mexico in a festive atmosphere with friendly service that keeps our guests coming back for more.
+      </p>
+      <div class="hero-btns">
+        <a href="menu.html" class="btn" data-en="View Our Menu" data-es="Ver Nuestro Menú">View Our Menu</a>
+        <a href="https://www.onlineorderbuddy.com/ordering/restaurant/menu?restaurant_uid=a9905f55-3fa0-42f4-a88e-6abba7519881&glfa_cid=1826676475.1608062202&glfa_t=1608062204382"
+           target="_blank" class="btn btn-secondary" data-en="Order Online" data-es="Ordenar En Línea">
+          Order Online
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- About Section -->
+   <section class="section about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2 class="section-title" data-en="Welcome to El Agave" data-es="Bienvenido a El Agave">Welcome to El Agave</h2>
+        <p data-en="El Agave serves authentic Mexican cuisine in a vibrant, festive atmosphere with friendly service, flavorful dishes, and refreshing drinks that keep guests coming back."
+           data-es="El Agave sirve auténtica cocina mexicana en un ambiente vibrante y festivo con servicio amigable, platos sabrosos y bebidas refrescantes que hacen que los clientes regresen.">
+          El Agave serves authentic Mexican cuisine in a vibrant, festive atmosphere with friendly service, flavorful dishes, and refreshing drinks that keep guests coming back.
+        </p>
+        <p data-en="Located in McDonough, GA, we pride ourselves on using fresh ingredients and traditional recipes to bring you the true taste of Mexico."
+           data-es="Ubicado en McDonough, GA, nos enorgullecemos de usar ingredientes frescos y recetas tradicionales para brindarte el verdadero sabor de México.">
+          Located in McDonough, GA, we pride ourselves on using fresh ingredients and traditional recipes to bring you the true taste of Mexico.
+        </p>
+        <p data-en="Whether you're joining us for a casual dinner, celebrating a special occasion, or ordering catering for your next event, we're committed to providing an exceptional dining experience."
+           data-es="Ya sea que nos visites para una cena casual, celebres una ocasión especial o solicites catering para tu próximo evento, estamos comprometidos a brindar una experiencia excepcional.">
+          Whether you're joining us for a casual dinner, celebrating a special occasion, or ordering catering for your next event, we're committed to providing an exceptional dining experience.
+        </p>
+        <a href="menu.html" class="btn" style="margin-top: 20px;" data-en="Explore Our Menu" data-es="Explorar Nuestro Menú">Explore Our Menu</a>
+      </div>
+
+      <div class="about-image">
+        <img src="./assets/img/fuera.png" alt="El Agave Restaurant Exterior">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Customer Favorites Section -->
+   <section class="section">
+    <div class="container">
+        <h2 class="section-title" data-en="Customer Favorites" data-es="Favoritos de los Clientes">Customer Favorites</h2>
+        <div class="favorites-grid">
+
+            <!-- Street Tacos -->
+            <div class="favorite-card">
+                <div class="favorite-img" style="background-image: url('./assets/img/streettacos.jpg');"></div>
+                <div class="favorite-content">
+                    <h3 data-en="Street Tacos" data-es="Tacos Callejeros">Street Tacos</h3>
+                    <p data-en="Onions, cilantro, lime, and salsa on corn or flour tortillas. Choose asada, pastor, carnitas, chorizo, or grilled chicken." 
+                       data-es="Cebollas, cilantro, lima y salsa en tortillas de maíz o harina. Elige asada, pastor, carnitas, chorizo o pollo a la parrilla.">
+                       Onions, cilantro, lime, and salsa on corn or flour tortillas. Choose asada, pastor, carnitas, chorizo, or grilled chicken.
+                    </p>
+                    <div class="favorite-price">$12.75</div>
+                    <span class="favorite-tag" data-en="Crowd favorite" data-es="Favorito del público">Crowd favorite</span>
+                </div>
+            </div>
+
+            <!-- Shrimp & Chicken Special -->
+            <div class="favorite-card">
+                <div class="favorite-img" style="background-image: url('./assets/img/camaronesypollo.png');"></div>
+                <div class="favorite-content">
+                    <h3 data-en="Shrimp & Chicken Special" data-es="Especial de Camarón y Pollo">Shrimp & Chicken Special</h3>
+                    <p data-en="Grilled shrimp and chicken on a bed of rice with grilled vegetables, finished with our signature white queso."
+                       data-es="Camarones y pollo a la parrilla sobre una cama de arroz con verduras asadas, terminado con nuestro queso blanco signature.">
+                       Grilled shrimp and chicken on a bed of rice with grilled vegetables, finished with our signature white queso.
+                    </p>
+                    <div class="favorite-price">$19.50</div>
+                    <span class="favorite-tag" data-en="Fan Favorite" data-es="Favorito de los Fans">Fan Favorite</span>
+                </div>
+            </div>
+
+            <!-- Chicken Soup -->
+            <div class="favorite-card">
+                <div class="favorite-img" style="background-image: url('./assets/img/chickensoup.jpg');"></div>
+                <div class="favorite-content">
+                    <h3 data-en="Chicken Soup" data-es="Sopa de Pollo">Chicken Soup</h3>
+                    <p data-en="Comforting, savory broth with tender chicken. Simple, warm, and satisfying."
+                       data-es="Caldo reconfortante y sabroso con pollo tierno. Simple, cálido y satisfactorio.">
+                       Comforting, savory broth with tender chicken. Simple, warm, and satisfying.
+                    </p>
+                    <div class="favorite-price">$9.75</div>
+                    <span class="favorite-tag" data-en="Top Rated" data-es="Mejor Calificado">Top Rated</span>
+                </div>
+            </div>
+
+            <!-- 3 Leches Cake -->
+            <div class="favorite-card">
+                <div class="favorite-img" style="background-image: url('./assets/img/3leches.jpg');"></div>
+                <div class="favorite-content">
+                    <h3 data-en="3 Leches Cake" data-es="Pastel 3 Leches">3 Leches Cake</h3>
+                    <p data-en="Moist sponge soaked in three milks, topped with whipped cream and fresh strawberries."
+                       data-es="Bizcocho húmedo empapado en tres leches, cubierto con crema batida y fresas frescas.">
+                       Moist sponge soaked in three milks, topped with whipped cream and fresh strawberries.
+                    </p>
+                    <div class="favorite-price">$7.50</div>
+                    <span class="favorite-tag" data-en="Rich & creamy" data-es="Rico y cremoso">Rich & creamy</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="favorites-cta">
+            <a href="menu.html" class="btn" data-en="View Full Menu" data-es="Ver Menú Completo">View Full Menu</a>
+            <a href="https://www.onlineorderbuddy.com/ordering/restaurant/menu?restaurant_uid=a9905f55-3fa0-42f4-a88e-6abba7519881&glfa_cid=1826676475.1608062202&glfa_t=1608062204382" target="_blank" class="btn btn-secondary" data-en="Order Online" data-es="Ordenar En Línea">Order Online</a>
+        </div>
+    </div>
+</section>
+
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title" data-en="What Our Guests Are Saying" data-es="Lo Que Dicen Nuestros Clientes">What Our Guests Are Saying</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" data-en="Desiree was awesome! Attentive with an amazing attitude. Best chicken quesadilla I've had in a long time. Street corn was good too!" data-es="¡Desiree fue increíble! Atenta con una actitud asombrosa. La mejor quesadilla de pollo que he probado en mucho tiempo. ¡El elote callejero también estuvo bueno!">Desiree was awesome! Attentive with an amazing attitude. Best chicken quesadilla I've had in a long time. Street corn was good too!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LX</div>
+                        <div class="author-info">
+                            <h4>Lilly Xiomara</h4>
+                            <div class="author-meta" data-en="5 months ago" data-es="Hace 5 meses">5 months ago</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" data-en="Still the best Mexican restaurant in town! The manager is very attentive, he always has been. The customer service is amazing and the place is always clean. 100 stars!" data-es="¡Sigue siendo el mejor restaurante mexicano de la ciudad! El gerente es muy atento, siempre lo ha sido. El servicio al cliente es increíble y el lugar siempre está limpio. ¡100 estrellas!">Still the best Mexican restaurant in town! The manager is very attentive, he always has been. The customer service is amazing and the place is always clean. 100 stars!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LR</div>
+                        <div class="author-info">
+                            <h4 data-en="Love and Respect for Everyone" data-es="Amor y Respeto para Todos">Love and Respect for Everyone</h4>
+                            <div class="author-meta" data-en="Lunch | $20–30 | 2 months ago" data-es="Almuerzo | $20–30 | Hace 2 meses">Lunch | $20–30 | 2 months ago</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" data-en="Desiree was awesome! Attentive with an amazing attitude. Best chicken quesadilla I've had in a long time. Street corn was good too!" data-es="¡Desiree fue increíble! Atenta con una actitud asombrosa. La mejor quesadilla de pollo que he probado en mucho tiempo. ¡El elote callejero también estuvo bueno!">Desiree was awesome! Attentive with an amazing attitude. Best chicken quesadilla I've had in a long time. Street corn was good too!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LR</div>
+                        <div class="author-info">
+                            <h4 data-en="Lilly Xiomara" data-es="Lilly Xiomara">Lilly Xiomara</h4>
+                            <div class="author-meta" data-en="Lunch | $20–30 | 2 months ago" data-es="Almuerzo | $20–30 | Hace 2 meses">Lunch | $20–30 | 2 months ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering Section -->
+    <section id="catering" class="section catering">
+        <div class="container">
+            <h2 class="section-title" data-en="Catering by El Agave" data-es="Catering por El Agave">Catering by El Agave</h2>
+            
+            <div class="catering-intro">
+                <p data-en="From office lunches to weddings, we bring the fiesta to you—fresh, flavorful, and right on time." data-es="Desde almuerzos de oficina hasta bodas, llevamos la fiesta hasta ti—fresco, sabroso y justo a tiempo.">From office lunches to weddings, we bring the fiesta to you—fresh, flavorful, and right on time.</p>
+            </div>
+            
+            <div class="catering-features">
+                <div class="catering-feature">
+                    <div class="catering-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 data-en="Delivery or Setup" data-es="Entrega o Montaje">Delivery or Setup</h3>
+                    <p data-en="Drop-off trays or full buffet setup." data-es="Bandejas de entrega o montaje completo de buffet.">Drop-off trays or full buffet setup.</p>
+                </div>
+                
+                <div class="catering-feature">
+                    <div class="catering-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 data-en="10–300 Guests" data-es="10–300 Invitados">10–300 Guests</h3>
+                    <p data-en="Perfect for meetings, parties, and events." data-es="Perfecto para reuniones, fiestas y eventos.">Perfect for meetings, parties, and events.</p>
+                </div>
+                
+                <div class="catering-feature">
+                    <div class="catering-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 data-en="Custom Menus" data-es="Menús Personalizados">Custom Menus</h3>
+                    <p data-en="Taco bars, fajitas, appetizers, and desserts." data-es="Barras de tacos, fajitas, aperitivos y postres.">Taco bars, fajitas, appetizers, and desserts.</p>
+                </div>
+                
+                <div class="catering-feature">
+                    <div class="catering-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 data-en="Easy Ordering" data-es="Pedido Fácil">Easy Ordering</h3>
+                    <p data-en="Tell us the date, headcount, and budget." data-es="Dinos la fecha, número de personas y presupuesto.">Tell us the date, headcount, and budget.</p>
+                </div>
+            </div>
+            
+            <div class="catering-packages">
+                <div class="catering-package">
+                    <div class="package-header">
+                        <h3 data-en="Taco Bar" data-es="Barra de Tacos">Taco Bar</h3>
+                    </div>
+                    <div class="package-content">
+                        <ul class="package-list">
+                            <li data-en="Choice of proteins (chicken, steak, carnitas)" data-es="Elección de proteínas (pollo, bistec, carnitas)">Choice of proteins (chicken, steak, carnitas)</li>
+                            <li data-en="Rice, beans, tortillas, chips & salsa" data-es="Arroz, frijoles, tortillas, totopos y salsa">Rice, beans, tortillas, chips & salsa</li>
+                            <li data-en="Fresh toppings & sauces" data-es="Toppings y salsas frescas">Fresh toppings & sauces</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="catering-package">
+                    <div class="package-header">
+                        <h3 data-en="Fajita Fiesta" data-es="Fiesta de Fajitas">Fajita Fiesta</h3>
+                    </div>
+                    <div class="package-content">
+                        <ul class="package-list">
+                            <li data-en="Sizzling peppers & onions" data-es="Pimientos y cebollas chisporroteantes">Sizzling peppers & onions</li>
+                            <li data-en="Chicken or steak (or both)" data-es="Pollo o bistec (o ambos)">Chicken or steak (or both)</li>
+                            <li data-en="Guacamole, pico, sour cream, cheese" data-es="Guacamole, pico de gallo, crema agria, queso">Guacamole, pico, sour cream, cheese</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="catering-package">
+                    <div class="package-header">
+                        <h3 data-en="Appetizer Spread" data-es="Selección de Aperitivos">Appetizer Spread</h3>
+                    </div>
+                    <div class="package-content">
+                        <ul class="package-list">
+                            <li data-en="Quesadillas, taquitos, empanadas" data-es="Quesadillas, taquitos, empanadas">Quesadillas, taquitos, empanadas</li>
+                            <li data-en="Queso, salsa verde, roja" data-es="Queso, salsa verde, roja">Queso, salsa verde, roja</li>
+                            <li data-en="Churros or tres leches add-on" data-es="Churros o pastel tres leches adicional">Churros or tres leches add-on</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="catering-cta">
+                <h3 data-en="Get a Catering Quote" data-es="Obtén una Cotización de Catering">Get a Catering Quote</h3>
+                <p data-en="Call (678) 583-2339" data-es="Llama al (678) 583-2339">Call <strong>(678) 583-2339</strong></p>
+                <p data-en="Need something specific? We'll customize a package for your event." data-es="¿Necesitas algo específico? Personalizaremos un paquete para tu evento.">Need something specific? We'll customize a package for your event.</p>
+                <a href="tel:6785832339" class="btn" style="margin-top: 20px;" data-en="Call Now" data-es="Llamar Ahora">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+   <section class="section gallery">
+    <div class="container">
+        <h2 class="section-title" data-en="Our Gallery" data-es="Nuestra Galería">Our Gallery</h2>
+        <div class="gallery-grid">
+            
+            <div class="gallery-item"><img src="./assets/img/food1.png" alt="Mexican Dish"></div>
+            <div class="gallery-item"><img src="./assets/img/food2.jpg" alt="Mexican Dish"></div>
+            <div class="gallery-item"><img src="./assets/img/food3.jpg" alt="Mexican Dish"></div>
+            <div class="gallery-item"><img src="./assets/img/food22.jpg" alt="Mexican Dish"></div>
+            <div class="gallery-item"><img src="./assets/img/food5.jpg" alt="Mexican Dish"></div>
+            <div class="gallery-item"><img src="./assets/img/food6.jpg" alt="Mexican Dish"></div>
+            <div class="gallery-item"><img src="./assets/img/food38.jpg" alt="Mexican Dish"></div>
+            <div class="gallery-item"><img src="./assets/img/food18.jpg" alt="Mexican Dish"></div>
+            <div class="gallery-item"><img src="./assets/img/food9.jpg" alt="Mexican Dish"></div>
+            <div class="gallery-item"><img src="./assets/img/food10.jpg" alt="Mexican Dish"></div>
+            <div class="gallery-item"><img src="./assets/img/food11.jpg" alt="Mexican Dish"></div>
+            <div class="gallery-item"><img src="./assets/img/food12.jpg" alt="Mexican Dish"></div>
+            <div class="gallery-item"><img src="./assets/img/food13.jpg" alt="Mexican Dish"></div>
+            <div class="gallery-item"><img src="./assets/img/food14.jpg" alt="Mexican Dish"></div>
+            <div class="gallery-item"><img src="./assets/img/food15.jpg" alt="Mexican Dish"></div>
+
+            <!-- Bebidas -->
+            <div class="gallery-item"><img src="./assets/img/drinks1.jpg" alt="Mexican Drink"></div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Image Modal -->
+    <div class="modal" id="imageModal">
+        <span class="modal-close">&times;</span>
+        <span class="modal-nav modal-prev"><i class="fas fa-chevron-left"></i></span>
+        <span class="modal-nav modal-next"><i class="fas fa-chevron-right"></i></span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+        </div>
+    </div>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title" data-en="Experience El Agave" data-es="Vive la Experiencia El Agave">Experience El Agave</h2>
+    <div class="video-container">
+      <video controls autoplay muted loop>
+        <source src="./assets/img/agavetacos.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section class="section contact">
+        <div class="container">
+            <h2 class="section-title" data-en="Visit Us Today" data-es="Visítanos Hoy">Visit Us Today</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3 data-en="Call Us" data-es="Llámanos">Call Us</h3>
+                            <p>(678) 583-2339</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 data-en="Email Us" data-es="Escríbenos">Email Us</h3>
+                            <p>elagavemexrest@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3 data-en="Visit Us" data-es="Visítanos">Visit Us</h3>
+                            <p>1381 Highway 20 W, McDonough, GA 30253</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3 data-en="Hours" data-es="Horario">Hours</h3>
+                            <p data-en="Sun–Thu: 11 AM – 10 PM" data-es="Dom–Jue: 11 AM – 10 PM">Sun–Thu: 11 AM – 10 PM</p>
+                            <p data-en="Fri: 11 AM – 11 PM" data-es="Vie: 11 AM – 11 PM">Fri: 11 AM – 11 PM</p>
+                            <p data-en="Sat: 11 AM – 10:30 PM" data-es="Sáb: 11 AM – 10:30 PM">Sat: 11 AM – 10:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 data-en="Send Us a Message" data-es="Envíanos un Mensaje">Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" data-en="Name" data-es="Nombre">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" data-en="Email" data-es="Correo Electrónico">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" data-en="Phone" data-es="Teléfono">Phone</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" data-en="Message" data-es="Mensaje">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" data-en="Send Message" data-es="Enviar Mensaje">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-about">
+        <div class="footer-logo">
+          <img src="./assets/img/logo.png" alt="El Agave Logo">
+        </div>
+        <p data-en="Authentic Mexican cuisine in a vibrant, festive atmosphere with friendly service that keeps our guests coming back."
+           data-es="Auténtica cocina mexicana en un ambiente vibrante y festivo con servicio amigable que hace que nuestros invitados regresen.">
+          Authentic Mexican cuisine in a vibrant, festive atmosphere with friendly service that keeps our guests coming back.
+        </p>
+
+        <div class="social-links">
+          <a href="https://www.facebook.com/elagavemcdonough" target="_blank" class="social-link">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/elagave____/" target="_blank" class="social-link">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+                <div class="footer-links">
+                    <h3 class="footer-heading" data-en="Quick Links" data-es="Enlaces Rápidos">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+                        <li><a href="menu.html" data-en="Menu" data-es="Menú">Menu</a></li>
+                        <li><a href="catering.html" data-en="Catering" data-es="Catering">Catering</a></li>
+                        <li><a href="https://www.onlineorderbuddy.com/ordering/restaurant/menu?restaurant_uid=a9905f55-3fa0-42f4-a88e-6abba7519881&glfa_cid=1826676475.1608062202&glfa_t=1608062204382" target="_blank" data-en="Order Online" data-es="Ordenar En Línea">Order Online</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-heading" data-en="Contact Info" data-es="Información de Contacto">Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 1381 Highway 20 W, McDonough, GA 30253</p>
+                    <p><i class="fas fa-phone-alt"></i> (678) 583-2339</p>
+                    <p><i class="fas fa-envelope"></i> elagavemexrest@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 El Agave Mexican Restaurant. All Rights Reserved. Powered By Menutech</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            const loader = document.querySelector('.loader');
+            setTimeout(function() {
+                loader.classList.add('hidden');
+            }, 1000);
+        });
+
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-bars');
+            this.querySelector('i').classList.toggle('fa-times');
+        });
+
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.mobile-toggle i').classList.remove('fa-times');
+                document.querySelector('.mobile-toggle i').classList.add('fa-bars');
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+        
+            const scrollTopBtn = document.querySelector('.scroll-top');
+            if (scrollTop > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+
+
+        document.querySelector('.scroll-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+
+            alert(`Thank you for your message, ${name}! We will get back to you soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Scroll animation for elements
+        function checkScroll() {
+            const elements = document.querySelectorAll('.section-title, .about-text, .about-image, .favorite-card, .gallery-item, .video-container, .contact-item, .contact-form, .catering-intro, .catering-feature, .catering-package, .catering-cta, .testimonial-card');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+
+        window.addEventListener('load', checkScroll);
+
+        window.addEventListener('scroll', checkScroll);
+
+
+        window.addEventListener('load', function() {
+            const heroContent = document.querySelector('.hero-content');
+            setTimeout(function() {
+                heroContent.classList.add('visible');
+            }, 500);
+        });
+
+
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+        });
+
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const closeBtn = document.querySelector('.modal-close');
+        const prevBtn = document.querySelector('.modal-prev');
+        const nextBtn = document.querySelector('.modal-next');
+        
+        let currentImageIndex = 0;
+        
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', function() {
+                currentImageIndex = index;
+                modalImg.src = this.querySelector('img').src;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        prevBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+            modalImg.src = galleryItems[currentImageIndex].querySelector('img').src;
+        });
+        
+
+        nextBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+            modalImg.src = galleryItems[currentImageIndex].querySelector('img').src;
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (modal.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                } else if (e.key === 'ArrowLeft') {
+                    currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+                    modalImg.src = galleryItems[currentImageIndex].querySelector('img').src;
+                } else if (e.key === 'ArrowRight') {
+                    currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+                    modalImg.src = galleryItems[currentImageIndex].querySelector('img').src;
+                }
+            }
+        });
+
+        const languageBtn = document.querySelector('.language-btn');
+        const languageDropdown = document.querySelector('.language-dropdown');
+        const currentLang = document.getElementById('current-lang');
+        const languageOptions = document.querySelectorAll('.language-option');
+        
+
+        languageBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            languageDropdown.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function() {
+            languageDropdown.classList.remove('active');
+        });
+        
+
+        languageOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                changeLanguage(lang);
+                languageDropdown.classList.remove('active');
+            });
+        });
+        
+
+        function changeLanguage(lang) {
+
+            currentLang.textContent = lang.toUpperCase();
+            
+
+            document.querySelectorAll('[data-en]').forEach(element => {
+                if (lang === 'en') {
+                    element.textContent = element.getAttribute('data-en');
+                } else if (lang === 'es') {
+                    element.textContent = element.getAttribute('data-es');
+                }
+            });
+            
+
+            if (lang === 'es') {
+                document.querySelector('title').textContent = 'El Agave Restaurante Mexicano | Auténtica Cocina Mexicana';
+            } else {
+                document.querySelector('title').textContent = 'El Agave Mexican Restaurant | Authentic Mexican Cuisine';
+            }
+            
+            // Save language preference
+            localStorage.setItem('preferred-language', lang);
+        }
+        
+        // Check for saved language preference
+        const savedLanguage = localStorage.getItem('preferred-language');
+        if (savedLanguage) {
+            changeLanguage(savedLanguage);
+        }
+    </script>
+</body>
+</html>
